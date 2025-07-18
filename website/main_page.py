@@ -23,7 +23,44 @@ def create() -> None:
             title("Welcome to *Zeyn's Audio Store*!")
             subtitle('Preview, checkout, and download recordings and sheet music for my compositions and arrangements') \
                 .classes('max-w-[20rem] sm:max-w-[24rem] md:max-w-[30rem]')
-            ui.link(target='#about').classes('scroll-indicator')
+            ui.link(target='#store').classes('scroll-indicator')
+
+    with ui.row().classes('''
+            dark-box min-h-screen no-wrap
+            justify-center items-center flex-col md:flex-row
+            py-20 px-8 lg:px-16
+            gap-8 sm:gap-16 md:gap-8 lg:gap-16
+        '''):
+        link_target('store')
+        with ui.column().classes('text-white max-w-4xl'):
+            heading('Store')
+            with ui.column().classes('gap-2 bold-links arrow-links text-lg'):
+
+                categories = {
+                    "Compositions": None,
+                    "Covers": None,
+                    "Arrangements": None
+                }
+                for category, tracks in categories.items():
+                    with ui.expansion(category, caption="Caption", group="group"):
+                        ui.label("asdf")
+
+                # ui.markdown('''
+                #     NiceGUI manages web development details, letting you focus on Python code for diverse applications,
+                #     including robotics, IoT solutions, smart home automation, and machine learning.
+                #     Designed to work smoothly with connected peripherals like webcams and GPIO pins in IoT setups,
+                #     NiceGUI streamlines the management of all your code in one place.
+                #     <br><br>
+                #     With a gentle learning curve, NiceGUI is user-friendly for beginners
+                #     and offers advanced customization for experienced users,
+                #     ensuring simplicity for basic tasks and feasibility for complex projects.
+                #     <br><br><br>
+                #     Available as
+                #     [PyPI package](https://pypi.org/project/nicegui/),
+                #     [Docker image](https://hub.docker.com/r/zauberzeug/nicegui) and on
+                #     [GitHub](https://github.com/zauberzeug/nicegui).
+                # ''')
+            example_card.create()
 
     with ui.row().classes('''
             dark-box min-h-screen no-wrap
