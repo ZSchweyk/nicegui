@@ -20,8 +20,8 @@ def create() -> None:
     with ui.row().classes('w-full h-screen items-center gap-8 pr-4 no-wrap into-section'):
         svg.face(half=True).classes('stroke-black dark:stroke-white w-[200px] md:w-[230px] lg:w-[300px]')
         with ui.column().classes('gap-4 md:gap-8 pt-32'):
-            title('Meet the *NiceGUI*.')
-            subtitle('And let any browser be the frontend of your Python code.') \
+            title("Welcome to *Zeyn's Audio Store*!")
+            subtitle('Preview, checkout, and download recordings and sheet music for my compositions and arrangements') \
                 .classes('max-w-[20rem] sm:max-w-[24rem] md:max-w-[30rem]')
             ui.link(target='#about').classes('scroll-indicator')
 

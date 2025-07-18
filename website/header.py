@@ -46,7 +46,7 @@ def add_header(menu: Optional[ui.left_drawer] = None) -> None:
             ui.button(on_click=menu.toggle, icon='menu').props('flat color=white round').classes('lg:hidden')
         with ui.link(target='/').classes('row gap-4 items-center no-wrap mr-auto'):
             svg.face().classes('w-8 stroke-white stroke-2 max-[610px]:hidden')
-            svg.word().classes('w-24')
+            svg.word().classes('w-42')  # was originally w-24
 
         with ui.row().classes('max-[1050px]:hidden'):
             for title_, target in menu_items.items():
