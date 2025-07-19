@@ -101,17 +101,35 @@ def render_store_ui():
                                 category,
                                 caption="Caption",
                                 group="group",
-                                value=category=="Compositions"
+                                value=category=="Improv"
                                 ).classes("w-full"):
                                 with ui.column().classes("w-full gap-4"):
                                     for track in tracks:
                                         track_id = track['id']
                                         with ui.card().classes("w-full no-shadow"):
-                                            with ui.row().classes('justify-between items-center w-full mt-2'):
-                                                ui.label(track['name']).classes('text-xl font-semibold')
-                                                ui.audio(track["full"], controls=True).classes('mt-2')  # no w-full if you want this on the same row as the label
-                                                ui.label(f"${track['price_cents'] / 100:.2f}").classes('text-lg')
-                                                checkboxes[track_id] = ui.checkbox('Select').on_value_change(lambda e: 1)
+                                            with ui.column().classes("w-full gap-1"):
+                                                # On small screens: stacked; on md+ screens: horizontal row
+                                                with ui.row().classes("flex flex-col md:flex-row md:justify-between md:items-center md:w-3/4 gap-2"):
+                                                    checkboxes[track_id] = ui.checkbox(track['name']).on_value_change(lambda e: 1)
+                                                    # ui.label(track['name']).classes('text-xl font-semibold')
+                                                    ui.audio(track["full"], controls=True).props("controlsList='nodownload'")
+                                                    ui.label(f"${track['price_cents'] / 100:.2f}").classes('text-lg')
+                                                # On small screens: stacked; on md+ screens: horizontal row
+                                                # with ui.row().classes("flex flex-col md:flex-row md:justify-between md:items-center w-full gap-2"):
+                                                    # ui.label(f"${track['price_cents'] / 100:.2f}").classes('text-lg')
+                                                    # checkboxes[track_id] = ui.checkbox('Select').on_value_change(lambda e: 1)
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        # My original layout
+                                        # with ui.card().classes("w-full no-shadow"):
+                                        #     with ui.row().classes('justify-between items-center w-full mt-2'):
+                                        #         ui.label(track['name']).classes('text-xl font-semibold')
+                                        #         ui.audio(track["full"], controls=True).classes('mt-2')  # no w-full if you want this on the same row as the label
+                                        #         ui.label(f"${track['price_cents'] / 100:.2f}").classes('text-lg')
+                                        #         checkboxes[track_id] = ui.checkbox('Select').on_value_change(lambda e: 1)
 
                     with ui.tab_panel('a'):
                         ui.label('Infos')
