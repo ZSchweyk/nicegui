@@ -64,6 +64,7 @@ def add_header(menu: Optional[ui.left_drawer] = None) -> None:
             ui.button(icon='brightness_auto', on_click=lambda: dark_mode.set_value(False)) \
                 .props('flat fab-mini color=white').bind_visibility_from(dark_mode, 'value', lambda mode: mode is None)
 
+        # Add YouTube, Spotify, Apple Music, etc...
         with ui.link(target='https://discord.gg/TEpFeAaF4f').classes('max-[515px]:hidden').tooltip('Discord'):
             svg.discord().classes('fill-white scale-125 m-1')
         with ui.link(target='https://www.reddit.com/r/nicegui/').classes('max-[465px]:hidden').tooltip('Reddit'):
