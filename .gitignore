@@ -14,3 +14,4 @@ venv
 node_modules/
 package-lock.json
 *.mp3*
+pat.txt
