@@ -86,6 +86,7 @@ def tracks_tab_contents():
         with ui.expansion(
             category,
             caption="Caption",
+            group="",
             value=category=="Originals"
             ).classes("w-full"):
             with ui.column().classes("w-full gap-4"):
@@ -126,7 +127,7 @@ def render_store_ui():
             gap-8 sm:gap-16 md:gap-8 lg:gap-16
         '''):
         link_target('store')
-        with ui.column().classes('w-full text-white max-w-4xl'):
+        with ui.column().classes('w-full text-white max-w-5x1'):
             heading('Store')
             with ui.column().classes('w-full gap-2 bold-links arrow-links text-lg'):
                 with ui.row().classes("w-full flex-row justify-between"):
@@ -135,9 +136,9 @@ def render_store_ui():
                         ui.tab('a', label='Albums')
                     ui.button("Checkout")
                 
-                with ui.scroll_area().classes("w-full h-96"):
-                    with ui.tab_panels(tabs, value='t').classes('w-full'):
-                        with ui.tab_panel('t'):
-                            tracks_tab_contents()
-                        with ui.tab_panel('a'):
-                            ui.label('Infos')
+                # with ui.scroll_area().classes("w-full h-96"):
+                with ui.tab_panels(tabs, value='t').classes('w-full'):
+                    with ui.tab_panel('t'):
+                        tracks_tab_contents()
+                    with ui.tab_panel('a'):
+                        ui.label('Albums')
