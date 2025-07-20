@@ -87,7 +87,7 @@ def tracks_tab_contents():
             category,
             caption="Caption",
             group="",
-            value=category=="Originals"
+            # value=category=="Originals"
             ).classes("w-full"):
             with ui.column().classes("w-full gap-4"):
                 for track in tracks:
@@ -123,12 +123,13 @@ def render_store_ui():
     with ui.row().classes('''
             dark-box min-h-screen no-wrap
             justify-center items-center flex-col md:flex-row
-            py-20 px-8 lg:px-16
+            py-10 px-8 lg:px-16
             gap-8 sm:gap-16 md:gap-8 lg:gap-16
         '''):
         link_target('store')
-        with ui.column().classes('w-full text-white max-w-5x1'):
-            heading('Store')
+        with ui.column().classes('w-full text-white max-w-4x1'):
+            # heading('Store')
+            # ui.label("Select tracks/albums")
             with ui.column().classes('w-full gap-2 bold-links arrow-links text-lg'):
                 with ui.row().classes("w-full flex-row justify-between"):
                     with ui.tabs().classes("") as tabs:
