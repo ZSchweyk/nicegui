@@ -29,7 +29,7 @@ def add_header(menu: Optional[ui.left_drawer] = None) -> None:
         'Installation': '/#installation',
         'Features': '/#features',
         'Demos': '/#demos',
-        'Documentation': '/documentation',
+        # 'Documentation': '/documentation',
         'Examples': '/#examples',
         'Why?': '/#why',
     }
@@ -53,8 +53,8 @@ def add_header(menu: Optional[ui.left_drawer] = None) -> None:
             for title_, target in menu_items.items():
                 ui.link(title_, target).classes(replace='text-lg text-white')
 
-        search = Search()
-        search.create_button()
+        # search = Search()
+        # search.create_button()
 
         with ui.element().classes('max-[420px]:hidden').tooltip('Cycle theme mode through dark, light, and system/auto.'):
             ui.button(icon='dark_mode', on_click=lambda: dark_mode.set_value(None)) \

@@ -95,7 +95,7 @@ def tracks_tab_contents():
                     with ui.card().classes("w-full no-shadow"):
                         with ui.column().classes("w-full gap-1"):
                             # On small screens: stacked; on md+ screens: horizontal row
-                            with ui.row().classes("flex flex-col md:flex-row md:justify-between md:items-center md:w-3/4 gap-2"):
+                            with ui.row().classes("flex flex-row justify-between items-center w-full md:w-3/4 gap-1"):
                                 checkboxes[track_id] = ui.checkbox(track['name']).on_value_change(lambda e: 1)
                                 # ui.label(track['name']).classes('text-xl font-semibold')
                                 ui.audio(track["full"], controls=True).props("controlsList='nodownload'")
@@ -128,7 +128,7 @@ def render_store_ui():
             
         '''):
         link_target('store')
-        with ui.column().classes('w-full md:w-2/3 text-white max-w-4x1'):
+        with ui.column().classes('w-full md:w-3/4 text-white max-w-4x1'):
             heading('Store')
             # ui.label("Select tracks/albums")
             with ui.column().classes('w-full gap-2 bold-links arrow-links text-lg'):
