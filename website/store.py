@@ -124,8 +124,7 @@ def render_store_ui():
             dark-box min-h-screen no-wrap
             md:justify-center md:flex-row
             py-10 px-8 lg:px-16
-            gap-8 sm:gap-16 md:gap-8 lg:gap-16
-            
+            gap-8 sm:gap-16 md:gap-8 lg:gap-16 
         '''):
         link_target('store')
         with ui.column().classes('w-full md:w-3/4 text-white max-w-4x1'):
@@ -134,7 +133,7 @@ def render_store_ui():
             with ui.column().classes('w-full gap-2 bold-links arrow-links text-lg'):
                 with ui.row().classes("w-full flex-row justify-between"):
                     with ui.tabs().classes("") as tabs:
-                        ui.tab('t', label='Tracks')
+                        ui.tab('t', label='Tracks').
                         ui.tab('a', label='Albums')
                     ui.button("Checkout")
                 

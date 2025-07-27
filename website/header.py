@@ -26,12 +26,12 @@ def add_header(menu: Optional[ui.left_drawer] = None) -> None:
     """Create the page header."""
     menu_items = {
         'Store': '/#store',
-        'Installation': '/#installation',
-        'Features': '/#features',
-        'Demos': '/#demos',
+        # 'Installation': '/#installation',
+        # 'Features': '/#features',
+        # 'Demos': '/#demos',
         # 'Documentation': '/documentation',
-        'Examples': '/#examples',
-        'Why?': '/#why',
+        # 'Examples': '/#examples',
+        # 'Why?': '/#why',
     }
     dark_mode = ui.dark_mode(value=app.storage.browser.get('dark_mode'), on_change=lambda e: ui.run_javascript(f'''
         fetch('/dark_mode', {{
@@ -56,13 +56,13 @@ def add_header(menu: Optional[ui.left_drawer] = None) -> None:
         # search = Search()
         # search.create_button()
 
-        with ui.element().classes('max-[420px]:hidden').tooltip('Cycle theme mode through dark, light, and system/auto.'):
-            ui.button(icon='dark_mode', on_click=lambda: dark_mode.set_value(None)) \
-                .props('flat fab-mini color=white').bind_visibility_from(dark_mode, 'value', value=True)
-            ui.button(icon='light_mode', on_click=lambda: dark_mode.set_value(True)) \
-                .props('flat fab-mini color=white').bind_visibility_from(dark_mode, 'value', value=False)
-            ui.button(icon='brightness_auto', on_click=lambda: dark_mode.set_value(False)) \
-                .props('flat fab-mini color=white').bind_visibility_from(dark_mode, 'value', lambda mode: mode is None)
+        # with ui.element().classes('max-[420px]:hidden').tooltip('Cycle theme mode through dark, light, and system/auto.'):
+        #     ui.button(icon='dark_mode', on_click=lambda: dark_mode.set_value(None)) \
+        #         .props('flat fab-mini color=white').bind_visibility_from(dark_mode, 'value', value=True)
+        #     ui.button(icon='light_mode', on_click=lambda: dark_mode.set_value(True)) \
+        #         .props('flat fab-mini color=white').bind_visibility_from(dark_mode, 'value', value=False)
+        #     ui.button(icon='brightness_auto', on_click=lambda: dark_mode.set_value(False)) \
+        #         .props('flat fab-mini color=white').bind_visibility_from(dark_mode, 'value', lambda mode: mode is None)
 
         # Add YouTube, Spotify, Apple Music, etc...
         with ui.link(target='https://discord.gg/TEpFeAaF4f').classes('max-[515px]:hidden').tooltip('Discord'):
